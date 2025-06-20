@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F07D2A">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="83dp"
+        android:fontFamily="@font/irish_grover"
+        android:text="The Food Boy"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="292dp"
+        android:layout_height="241dp"
+
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:srcCompat="@drawable/ic_1" />
+
+    <EditText
+        android:id="@+id/edtUser"
+        android:layout_width="355dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:hint="Tên đăng nhập"
+
+        android:inputType="text"
+        android:padding="16dp"
+        android:textColor="#292323"
+        android:textColorHint="#5D5252"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="225dp"
+        android:layout_height="71dp"
+
+        android:layout_marginStart="135dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="57dp"
+        android:backgroundTint="@color/pink_100"
+        android:text="Đăng nhập"
+        android:textColor="#000000"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtPass"
+        android:layout_width="355dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="#292323"
+        android:textColorHint="#5D5252"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtUser" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
