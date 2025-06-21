@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="32dp"
-            android:background="#E83E3E"
+            android:background="#4A82AF"
             android:fontFamily="@font/inter_bold"
             android:text="Trang Chủ"
             android:textAlignment="center"
