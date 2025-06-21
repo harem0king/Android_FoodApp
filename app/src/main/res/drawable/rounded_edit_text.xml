@@ -1,0 +1,16 @@
+<!-- res/drawable/edittext_rounded.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF" /> <!-- Màu nền trắng -->
+
+    <stroke
+        android:width="2dp"
+        android:color="#000000" /> <!-- Viền đen với độ rộng 2dp -->
+
+    <corners android:radius="40dp" /> <!-- Bo góc tròn với bán kính 12dp -->
+
+    <padding
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp" /> <!-- Padding bên trong -->
+</shape>
