@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_manage_food"
+        android:title="Quản lý món ăn" />
+    <item
+        android:id="@+id/nav_manage_food_type"
+        android:title="Quản lý loại món ăn" />
+    <item
+        android:id="@+id/nav_manage_table"
+        android:title="Quản lý bàn"
+        />
+
+    <item
+        android:id="@+id/nav_top_selling_items"
+        android:title="Thống kê món bán chạy" />
+    <item
+        android:id="@+id/nav_revenue_statistics"
+        android:title="Thống kê doanh thu"
+        android:visible="true" />
+    <item
+        android:id="@+id/nav_manage_employee"
+        android:title="Quản lý nhân viên" />
+    <item
+        android:id="@+id/nav_order_food"
+        android:title="Gọi Món"
+        android:visible="false" />
+</menu>

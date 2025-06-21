@@ -1,7 +1,5 @@
 package com.example.cse441_project.login_logout;
 
-import static android.os.Build.VERSION_CODES.R;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,14 +14,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.cse441_project.FoodItem.HomeActivity;
-
 import com.example.cse441_project.Model.Employee;
 import com.example.cse441_project.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-public class inLoginActivity extends AppCompatActivity {
+public class IntroActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firestore;
@@ -43,7 +40,7 @@ public class inLoginActivity extends AppCompatActivity {
         startbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(inLoginActivity.this, LoginActivity.class);
+                Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,6 +51,7 @@ public class inLoginActivity extends AppCompatActivity {
             return insets;
         });
     }
+
     private void autoLogin() {
 
         SharedPreferences sharedPreferences = getSharedPreferences("LoginPrefs", MODE_PRIVATE);
@@ -84,5 +82,3 @@ public class inLoginActivity extends AppCompatActivity {
                 });
     }
 }
-
-
