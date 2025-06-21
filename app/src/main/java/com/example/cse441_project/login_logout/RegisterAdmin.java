@@ -20,6 +20,7 @@ public class RegisterAdmin extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_admin_account);
