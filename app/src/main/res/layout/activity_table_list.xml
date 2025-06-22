@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidx="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Thanh tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/red_500"
+        android:padding="16dp">
+
+        <!-- Nút Back -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back"
+            android:contentDescription="Back"
+            android:layout_gravity="center_vertical"/>
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn bàn"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <!-- Phần chứa danh sách bàn căn giữa -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- CardView bao quanh nền xám -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            androidx:cardBackgroundColor="@color/gray_100"
+            androidx:cardCornerRadius="8dp">
+
+            <!-- GridView hiển thị danh sách bàn -->
+            <GridView
+                android:id="@+id/tableGridView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:verticalSpacing="8dp"
+                android:horizontalSpacing="8dp"
+                android:gravity="center"/>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <!-- Thông báo trạng thái -->
+    <TextView
+        android:id="@+id/statusMessageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:background="@color/gray_100"
+        android:gravity="center"/>
+
+    <!-- Nút hành động -->
+    <LinearLayout
+        android:id="@+id/actionButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="16dp"
+        android:layout_marginTop="8dp">
+
+        <!-- Nút Gọi món -->
+        <Button
+            android:id="@+id/orderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gọi món"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/red_500"
+            android:textColor="@android:color/white"/>
+
+        <!-- Nút Xem hóa đơn -->
+        <Button
+            android:id="@+id/viewInvoiceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem hóa đơn"
+            android:textSize="16sp"
+            android:backgroundTint="@color/red_500"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Nút Thêm bàn -->
+    <Button
+        android:id="@+id/addTableButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm bàn"
+        android:backgroundTint="@color/red_500"
+        android:layout_margin="8dp"
+        android:textSize="16sp"/>
+</LinearLayout>
