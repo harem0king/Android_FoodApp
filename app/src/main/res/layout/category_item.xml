@@ -1,0 +1,26 @@
+<!-- res/layout/category_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- ImageView hiển thị hình ảnh của Category -->
+    <ImageView
+        android:id="@+id/imgCategory"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background" />
+    <!-- TextView hiển thị tên của Category -->
+    <TextView
+        android:id="@+id/tvCategoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Tên Loại"
+        android:textColor="#000"
+        android:textSize="16sp" />
+</LinearLayout>
