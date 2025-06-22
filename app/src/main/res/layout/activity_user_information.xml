@@ -12,7 +12,7 @@
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DC4439"
+        android:background="#389BA6"
         android:fontFamily="@font/inter_bold"
         android:text="Tài Khoản"
         android:textAlignment="center"
@@ -230,7 +230,7 @@
             android:id="@+id/button6"
             android:layout_width="126dp"
             android:layout_height="69dp"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="#59CDD3"
             android:text="Xong"
             android:textSize="20sp" />
     </LinearLayout>

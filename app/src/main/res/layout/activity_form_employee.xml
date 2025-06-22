@@ -12,7 +12,7 @@
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#E83E3E"
+        android:background="#4797BC"
         android:text="Quản lý nhân viên"
         android:textAlignment="center"
         android:textColor="#EDE2E2"
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#E83E3E"
+            android:backgroundTint="#3C7C97"
             android:text="Thêm" />
 
     </LinearLayout>

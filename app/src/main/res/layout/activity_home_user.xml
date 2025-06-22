@@ -12,7 +12,7 @@
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#DC4439"
+        android:background="#90CAF9"
         android:fontFamily="@font/inter_bold"
         android:text="Tài Khoản"
         android:textAlignment="center"
@@ -29,7 +29,7 @@
             android:layout_width="408dp"
             android:layout_height="67dp"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#D5E3E6"
+            android:backgroundTint="#90CAF9"
             android:text="Thông tin cá nhân"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#D5E3E6"
+            android:backgroundTint="#90CAF9"
             android:text="Đăng xuất"
             android:textColor="@color/black"
             android:textSize="20sp" />

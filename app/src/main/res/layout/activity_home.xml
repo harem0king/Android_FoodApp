@@ -11,19 +11,22 @@
         android:layout_height="match_parent">
 
         <!-- 🟦 Header -->
+
         <TextView
             android:id="@+id/textView5"
             android:layout_width="0dp"
             android:layout_height="56dp"
+            android:layout_marginTop="16dp"
             android:background="#90CAF9"
+            android:fontFamily="@font/inter_bold"
             android:gravity="center"
             android:text="Trang Chủ"
             android:textColor="@android:color/white"
             android:textSize="24sp"
-            android:fontFamily="@font/inter_bold"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/menu_img"

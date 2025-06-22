@@ -11,7 +11,7 @@
         android:id="@+id/tv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#F44336"
+        android:background="#57BDD7"
         android:text="Quản lý nhân viên"
         android:textColor="#ffffff"
         android:textSize="20sp"
@@ -145,7 +145,7 @@
             android:layout_width="202dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/red_500"
+            android:backgroundTint="#4FB1C5"
             android:text="Xoá tài khoản" />
 
         <Button
@@ -153,7 +153,7 @@
             android:layout_width="202dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/red_500"
+            android:backgroundTint="#49CFD1"
             android:text="Cập nhật" />
     </LinearLayout>
 

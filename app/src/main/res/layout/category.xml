@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red_500"
+        android:background="#56BD9E"
         android:padding="16dp"
         android:orientation="horizontal">
 
@@ -124,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:backgroundTint="@color/red_500"
+                    android:backgroundTint="#6BE7E5"
                     android:drawablePadding="8dp"
                     android:padding="16dp"
                     android:text="Thêm danh mục"
@@ -138,7 +138,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="83dp"
-        android:background="@color/red_500"
+        android:background="#5BC0D0"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="16dp">

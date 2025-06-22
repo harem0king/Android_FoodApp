@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red_500"
+        android:background="#4DA1BA"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="16dp">
@@ -119,7 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Lưu"
-                        android:backgroundTint="@color/red_500"
+                        android:backgroundTint="#54C7D1"
                         android:textColor="@android:color/white"/>
                 </LinearLayout>
 
@@ -132,7 +132,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red_500"
+        android:background="#44ACC7"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="16dp">
