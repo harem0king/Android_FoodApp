@@ -1,6 +1,4 @@
-package com.example.cse441_project.login_logout;
-
-import static android.os.Build.VERSION_CODES.R;
+package com.example.cse441_project.Login_Logout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

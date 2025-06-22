@@ -1,4 +1,4 @@
-package com.example.cse441_project.login_logout;
+package com.example.cse441_project.Login_Logout;
 
 import android.content.Intent;
 import android.os.Bundle;
