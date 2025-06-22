@@ -34,12 +34,19 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.firebase:firebase-auth:22.1.1")
+    implementation ("com.google.firebase:firebase-database:20.3.0")
+
+
+    implementation ("com.google.android.material:material:1.4.0")
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation ("com.google.android.gms:play-services-base:18.3.0")
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation ("androidx.core:core:1.10.1")
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -47,6 +54,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.database)
+    implementation(libs.litert.support.api)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
