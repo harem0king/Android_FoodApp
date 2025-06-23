@@ -154,7 +154,7 @@ public class OrderRequestActivity extends AppCompatActivity {
                 OrderDetail orderDetail = new OrderDetail(orderId, detail.getItemFoodID(), detail.getQuantity());
 
                 // Đẩy OrderDetail object lên Firestore
-                db.collection("orders").document(orderId).collection("orderDetails")
+                db.collection("order").document(orderId).collection("orderDetails")
                         .add(orderDetail) // Thêm vào collection con orderDetails
                         .addOnSuccessListener(aVoid -> {
                             Toast.makeText(this, "Chi tiết đơn hàng đã được lưu!", Toast.LENGTH_SHORT).show();

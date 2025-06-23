@@ -58,26 +58,23 @@ public class TableListActivity extends AppCompatActivity {
 
         loadTables();
 
-        tableGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Table selectedTable = tableList.get(position);
-                selectedTableId = selectedTable.getTableId();
-                selectedTableStatus = selectedTable.getStatus();
-                updateStatusMessage(selectedTableStatus);
+        tableGridView.setOnItemClickListener((parent, view, position, id) -> {
+            Table selectedTable = tableList.get(position);
+            selectedTableId = selectedTable.getTableId();
+            selectedTableStatus = selectedTable.getStatus();
+            updateStatusMessage(selectedTableStatus);
 
-                // Show the action buttons based on table status
-                if ("available".equals(selectedTableStatus) || "reserved".equals(selectedTableStatus)) {
-                    actionButtonsLayout.setVisibility(View.VISIBLE);
-                    viewInvoiceButton.setVisibility(View.GONE);
-                    orderButton.setVisibility(View.VISIBLE);
-                } else if ("busy".equals(selectedTableStatus)) {
-                    actionButtonsLayout.setVisibility(View.VISIBLE);
-                    viewInvoiceButton.setVisibility(View.VISIBLE);
-                    orderButton.setVisibility(View.VISIBLE);
-                } else {
-                    actionButtonsLayout.setVisibility(View.GONE);
-                }
+            // Show the action buttons based on table status
+            if ("available".equals(selectedTableStatus) || "reserved".equals(selectedTableStatus)) {
+                actionButtonsLayout.setVisibility(View.VISIBLE);
+                viewInvoiceButton.setVisibility(View.GONE);
+                orderButton.setVisibility(View.VISIBLE);
+            } else if ("busy".equals(selectedTableStatus)) {
+                actionButtonsLayout.setVisibility(View.VISIBLE);
+                viewInvoiceButton.setVisibility(View.VISIBLE);
+                orderButton.setVisibility(View.VISIBLE);
+            } else {
+                actionButtonsLayout.setVisibility(View.GONE);
             }
         });
 
@@ -95,14 +92,23 @@ public class TableListActivity extends AppCompatActivity {
             addTableFragment.show(fragmentManager, "AddTableFragment");
         });
 
-        // Order button
+        // Order button: Cập nhật trạng thái bàn => chuyển sang OrderActivity
         orderButton.setOnClickListener(v -> {
-            if (selectedTableId != null && ("available".equals(selectedTableStatus) || "busy".equals(selectedTableStatus))) {
-                Intent intent = new Intent(TableListActivity.this, OrderActivity.class);
-                intent.putExtra("tableId", selectedTableId); // Pass the selected tableId to OrderActivity
-                startActivity(intent);
+            if (selectedTableId != null && ("available".equals(selectedTableStatus) || "reserved".equals(selectedTableStatus))) {
+                db.collection("Tables")
+                        .document(selectedTableId)
+                        .update("status", "busy")
+                        .addOnSuccessListener(aVoid -> {
+                            Toast.makeText(TableListActivity.this, "Bàn được cập nhật sang trạng thái 'busy'", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(TableListActivity.this, OrderActivity.class);
+                            intent.putExtra("tableId", selectedTableId);
+                            startActivity(intent);
+                        })
+                        .addOnFailureListener(e -> {
+                            Toast.makeText(TableListActivity.this, "Không thể cập nhật trạng thái bàn!", Toast.LENGTH_SHORT).show();
+                        });
             } else {
-                Toast.makeText(TableListActivity.this, "Please select an available or reserved table.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TableListActivity.this, "Vui lòng chọn bàn trống hoặc đã đặt.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,10 +116,10 @@ public class TableListActivity extends AppCompatActivity {
         viewInvoiceButton.setOnClickListener(v -> {
             if (selectedTableId != null && "busy".equals(selectedTableStatus)) {
                 Intent intent = new Intent(TableListActivity.this, InvoiceActivity.class);
-                intent.putExtra("tableId", selectedTableId); // Pass the selected tableId to InvoiceActivity
+                intent.putExtra("tableId", selectedTableId);
                 startActivity(intent);
             } else {
-                Toast.makeText(TableListActivity.this, "Please select a busy table to view the invoice.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TableListActivity.this, "Chọn bàn đang có khách để xem hóa đơn.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -145,9 +151,13 @@ public class TableListActivity extends AppCompatActivity {
             case "busy":
                 statusMessageTextView.setText("Bàn đang có khách");
                 break;
+            case "reserved":
+                statusMessageTextView.setText("Bàn đã đặt trước");
+                break;
             default:
-                statusMessageTextView.setText("");
+                statusMessageTextView.setText("Trạng thái không xác định");
                 break;
         }
     }
 }
+

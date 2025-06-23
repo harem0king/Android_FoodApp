@@ -1,7 +1,6 @@
 package com.example.cse441_project.FoodItem;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -20,9 +19,11 @@ import com.example.cse441_project.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class RevenueActivity extends AppCompatActivity {
 
@@ -40,7 +41,6 @@ public class RevenueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.revenue_statistics_activity);
 
-        // Khởi tạo các view và Firestore
         etNgayBatDau = findViewById(R.id.etNgayBatDau);
         etNgayKetThuc = findViewById(R.id.etNgayKetThuc);
         rvDoanhThu = findViewById(R.id.rvDoanhThu);
@@ -53,16 +53,11 @@ public class RevenueActivity extends AppCompatActivity {
         rvDoanhThu.setLayoutManager(new LinearLayoutManager(this));
         rvDoanhThu.setAdapter(adapter);
 
-
         etNgayBatDau.setOnClickListener(v -> showDatePickerDialog(etNgayBatDau));
         etNgayKetThuc.setOnClickListener(v -> showDatePickerDialog(etNgayKetThuc));
-        imgBack.setOnClickListener(v -> {
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
-        });
+        imgBack.setOnClickListener(v -> finish());
     }
 
-    // Hiển thị DatePickerDialog để chọn ngày
     private void showDatePickerDialog(EditText editText) {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -71,10 +66,11 @@ public class RevenueActivity extends AppCompatActivity {
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                 (view, selectedYear, selectedMonth, selectedDay) -> {
-                    String date = selectedYear + "-" + (selectedMonth + 1) + "-" + selectedDay;
+                    // *** ĐÂY LÀ DÒNG QUAN TRỌNG NHẤT CẦN SỬA ***
+                    // Luôn định dạng ngày thành "yyyy-MM-dd" (ví dụ: "2025-06-23")
+                    String date = String.format(Locale.US, "%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay);
                     editText.setText(date);
 
-                    // Tự động tải dữ liệu khi đã chọn xong cả ngày bắt đầu và kết thúc
                     if (!etNgayBatDau.getText().toString().isEmpty() && !etNgayKetThuc.getText().toString().isEmpty()) {
                         loadOrdersByDate();
                     }
@@ -82,37 +78,45 @@ public class RevenueActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    // Tải dữ liệu hóa đơn theo khoảng ngày
     private void loadOrdersByDate() {
         String startDate = etNgayBatDau.getText().toString();
         String endDate = etNgayKetThuc.getText().toString();
 
         if (startDate.isEmpty() || endDate.isEmpty()) {
-            Toast.makeText(RevenueActivity.this, "Vui lòng chọn khoảng thời gian", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Vui lòng chọn khoảng thời gian", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Truy vấn dữ liệu từ Firestore
+        if (startDate.compareTo(endDate) > 0) {
+            Toast.makeText(this, "Ngày bắt đầu không được lớn hơn ngày kết thúc", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         db.collection("Order")
                 .whereGreaterThanOrEqualTo("orderDate", startDate)
                 .whereLessThanOrEqualTo("orderDate", endDate)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
-                    // Xóa dữ liệu cũ và đặt lại doanh thu
                     orderList.clear();
                     totalRevenue = 0;
 
-                    // Duyệt qua kết quả và thêm vào danh sách hóa đơn
-                    for (QueryDocumentSnapshot document : querySnapshot) {
-                        Order order = document.toObject(Order.class);
-                        orderList.add(order);
-                        totalRevenue += order.getTotalAmount();
+                    if (querySnapshot.isEmpty()) {
+                        Toast.makeText(RevenueActivity.this, "Không tìm thấy đơn hàng nào.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        for (QueryDocumentSnapshot document : querySnapshot) {
+                            Order order = document.toObject(Order.class);
+                            orderList.add(order);
+                            totalRevenue += order.getTotalAmount();
+                        }
                     }
 
-                    // Cập nhật adapter và tổng doanh thu
                     adapter.notifyDataSetChanged();
-                    tvTongDoanhThu.setText("Tổng doanh thu: " + totalRevenue + "đ");
+                    NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+                    tvTongDoanhThu.setText("Tổng doanh thu: " + currencyFormatter.format(totalRevenue));
                 })
-                .addOnFailureListener(e -> Log.e("RevenueActivity", "Error fetching orders", e));
+                .addOnFailureListener(e -> {
+                    Log.e("RevenueActivity", "Error fetching orders", e);
+                    Toast.makeText(RevenueActivity.this, "Lỗi khi tải dữ liệu.", Toast.LENGTH_SHORT).show();
+                });
     }
 }
