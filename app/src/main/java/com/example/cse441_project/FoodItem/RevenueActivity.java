@@ -66,7 +66,7 @@ public class RevenueActivity extends AppCompatActivity {
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                 (view, selectedYear, selectedMonth, selectedDay) -> {
-                    // *** ĐÂY LÀ DÒNG QUAN TRỌNG NHẤT CẦN SỬA ***
+
                     // Luôn định dạng ngày thành "yyyy-MM-dd" (ví dụ: "2025-06-23")
                     String date = String.format(Locale.US, "%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay);
                     editText.setText(date);
