@@ -120,7 +120,10 @@ public class EmployeeDetailsActivity extends AppCompatActivity {
             }
         }
     }
-
+    private boolean validateFields() {
+        if (TextUtils.isEmpty(etUsername.getText().toString())) {
+            etUsername.setError("Vui lòng nhập tên đăng nhập");
+            return false;
         }
         if (TextUtils.isEmpty(etPassword.getText().toString())) {
             etPassword.setError("Vui lòng nhập mật khẩu");
