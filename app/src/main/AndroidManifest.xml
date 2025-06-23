@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
 
     <application
         android:allowBackup="true"
@@ -10,10 +17,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodApp"
+        android:theme="@style/Theme.CSE441_PROJECT"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".User_information_activity"
+            android:exported="false" />
+        <activity
+            android:name=".FormEmployeeActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".home_user"
+            android:exported="false" />
+        <activity
+            android:name=".Login_Logout.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +39,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Login_Logout.LoginActivity" />
+        <activity android:name=".Category.CategoryActivity" />
+        <activity android:name=".Category.CategoryEditActivity" />
+        <activity android:name=".Category.CategoryAddActivity" />
+        <activity android:name=".Employee.ActivityFormEmployee" />
+        <activity android:name=".FoodItem.AddFoodActivity" />
+        <activity android:name=".FoodItem.DeleteFood" />
+        <activity android:name=".FoodItem.EditFood" />
+        <activity android:name=".FoodItem.HomeActivity" />
+        <activity android:name=".FoodItem.HomeUser" />
+        <activity android:name=".FoodItem.RevenueActivity" />
+        <activity android:name=".FoodItem.SearchEditFood" />
+        <activity android:name=".FoodItem.TopSaleActivity" />
+        <activity android:name=".Order.InvoiceActivity" />
+        <activity android:name=".Order.OrderActivity" />
+        <activity android:name=".Order.TableListActivity" />
+        <activity android:name=".Employee.AddEmployee" />
+        <activity android:name=".Employee.EmployeeDetailsActivity" />
+        <activity android:name=".Employee.MyInfoActivity" />
+        <activity android:name=".Order.OrderRequestActivity"/>
+
+
     </application>
 
 </manifest>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidx="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Thanh tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#4AA0C5"
+        android:padding="16dp">
+
+        <!-- Nút Back -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back"
+            android:contentDescription="Back"
+            android:layout_gravity="center_vertical"/>
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hóa đơn"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <!-- Thông tin hóa đơn -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Thông tin bàn và ngày lập -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/tableNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bàn số 10"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/invoiceDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="20:03:19"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- Bảng thông tin các món ăn -->
+        <TableLayout
+            android:id="@+id/invoiceTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:background="@color/gray_100">
+
+            <!-- Tiêu đề bảng -->
+            <TableRow>
+                <TextView
+                    android:text="STT"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="Tên món"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="Số lượng"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="Giá tiền"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:text="Thành tiền"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            </TableRow>
+
+
+            <!-- Thêm các dòng dữ liệu món ăn khác ở đây -->
+        </TableLayout>
+
+        <!-- Tổng tiền -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:gravity="end">
+
+            <TextView
+                android:text="Tổng tiền:"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+
+            <TextView
+                android:id="@+id/totalAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="240k"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Nút In hóa đơn -->
+    <Button
+        android:id="@+id/printInvoiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="In hóa đơn"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#52A0C1"
+        android:layout_margin="16dp"/>
+</LinearLayout>

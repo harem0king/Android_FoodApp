@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">FoodApp</string>
+    <string name="app_name" translatable="false">CSE441_PROJECT</string>
+    <string-array name="roles_array">
+        <item>admin</item>
+        <item>nhân viên</item>
+    </string-array>
+    <string-array name="gender_array">
+        <item>Nam</item>
+        <item>Nữ</item>
+    </string-array>
+<!--<<<<<<< HEAD-->
+<!--    &lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
+<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+<!--=======-->
+<!--&gt;>>>>>> origin/DauThe-->
 </resources>

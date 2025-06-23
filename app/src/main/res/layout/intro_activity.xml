@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F07D2A">
+    android:background="#90CAF9">
 
     <TextView
         android:id="@+id/textView2"
@@ -13,7 +13,7 @@
         android:layout_height="109dp"
         android:layout_marginBottom="92dp"
         android:fontFamily="@font/irish_grover"
-        android:text="Oder Your Favorite Food "
+        android:text="Pick what you want "
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="40dp"
@@ -31,7 +31,7 @@
         android:layout_marginTop="70dp"
         android:layout_marginEnd="110dp"
         android:fontFamily="@font/irish_grover"
-        android:text="Oder Food"
+        android:text="Let him cook"
         android:textColor="#FFFFFF"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"

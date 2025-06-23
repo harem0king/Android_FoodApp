@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerAdmin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F07D2A">
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="225dp"
+        android:layout_height="71dp"
+
+        android:layout_marginStart="82dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/rounded_edit_text"
+        android:text="Register"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="307dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="83dp"
+        android:fontFamily="@font/irish_grover"
+        android:text="Đăng ký tài khoản"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/gioiTinhEditText"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="text"
+
+        android:padding="16dp"
+        android:text="Giới tính"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tenNVEditText" />
+
+    <EditText
+        android:id="@+id/ngaySinhEditText"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="text"
+
+        android:padding="16dp"
+        android:text="Ngày sinh"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gioiTinhEditText" />
+
+    <EditText
+        android:id="@+id/cmndEditText"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="text"
+
+        android:padding="16dp"
+        android:text="CCCD"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ngaySinhEditText" />
+
+    <EditText
+        android:id="@+id/tenDNEditText"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="text"
+
+        android:padding="16dp"
+        android:text="Tên đăng nhập"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cmndEditText" />
+
+    <EditText
+        android:id="@+id/matKhauEditText"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="text"
+
+        android:padding="16dp"
+        android:text="Mật khẩu"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tenDNEditText" />
+
+    <EditText
+        android:id="@+id/tenNVEditText"
+        android:layout_width="355dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+
+        android:hint="Họ tên"
+        android:inputType="text"
+        android:padding="16dp"
+        android:text="Họ Tên"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "378475382623",
+    "firebase_url": "https://cseandroid-c15b6-default-rtdb.firebaseio.com/",
+    "project_id": "cseandroid-c15b6",
+    "storage_bucket": "cseandroid-c15b6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378475382623:android:2678d054379175e22318ea",
+        "android_client_info": {
+          "package_name": "com.example.cse441_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkm-bgJle2vPAgTiaC_yepoYt2GdojylI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

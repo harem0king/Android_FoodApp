@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Thanh công cụ đầu trang -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D32F2F"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back button"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Hoá đơn"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Ngày lập và thông tin bàn -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/ngay_lap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày lập: 2024-10-08"
+            android:textColor="#000000"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/gio_lap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20:03:19"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ban_so"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bàn số 10"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Bảng hoá đơn -->
+    <TableLayout
+        android:id="@+id/table_hoa_don"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:background="#E0E0E0"
+        android:padding="10dp">
+
+        <!-- Hàng tiêu đề -->
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STT"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên món"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số lượng"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giá tiền"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thành tiền"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center" />
+        </TableRow>
+
+        <!-- Hàng trống để đẩy dữ liệu từ CSDL -->
+        <!-- Dữ liệu sẽ được đẩy vào từ code Java/ Kotlin -->
+
+    </TableLayout>
+
+    <!-- Tổng tiền -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tổng tiền:"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/tong_tien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0đ"
+            android:textSize="16sp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Thanh điều hướng dưới cùng -->
+</LinearLayout>
