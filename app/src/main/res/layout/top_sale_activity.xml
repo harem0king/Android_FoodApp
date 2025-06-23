@@ -17,7 +17,7 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="51dp"
-            android:background="#E83E3E"
+            android:background="#57BDD7"
             android:fontFamily="@font/inter_bold"
             android:text="Top món bán chạy"
             android:textAlignment="center"

@@ -85,8 +85,8 @@ public class CategoryActivity extends AppCompatActivity {
             ImageView imgCategory = categoryLayout.findViewById(R.id.txtImageView);
             Glide.with(this)
                     .load(category.getCategoryImage())  // URL hình ảnh
-                    .placeholder(R.drawable.background_red)
-                    .error(R.drawable.background_red)
+                    .placeholder(R.drawable.background)
+                    .error(R.drawable.background)
                     .into(imgCategory);
 
             // Thiết lập sự kiện cho nút chỉnh sửa

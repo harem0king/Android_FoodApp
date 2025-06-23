@@ -75,7 +75,7 @@ public class CategoryEditActivity extends AppCompatActivity {
                         // Sử dụng Glide để tải hình ảnh vào ImageView
                         Glide.with(this)
                                 .load(categoryImage)
-                                .placeholder(R.drawable.background_red) // Hình ảnh placeholder
+                                .placeholder(R.drawable.background) // Hình ảnh placeholder
                                 .into(addImageView);
                     } else {
                         Log.d("CategoryEdit", "Danh mục không tồn tại");

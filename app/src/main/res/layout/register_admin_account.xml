@@ -5,7 +5,7 @@
     android:id="@+id/registerAdmin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F07D2A">
+    android:background="#57BDD7">
 
     <Button
         android:id="@+id/registerButton"

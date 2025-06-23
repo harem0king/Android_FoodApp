@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#F44336"
+        android:background="#57BDD7"
         android:fontFamily="@font/inter_bold"
         android:text="Thống kê doanh thu"
         android:textAlignment="center"

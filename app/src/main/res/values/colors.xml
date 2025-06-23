@@ -6,6 +6,7 @@
     <color name="red_500">#F44336</color>
     <color name="gray">#808080</color>
     <color name="green">#10E64A</color>
+    <color name="blue">#57BDD7</color>
 
-    <color name="pink_100">#FCE4EC</color> <!-- Màu hồng nhạt -->
+    <color name="pink_100">#FCE4EC</color>
 </resources>

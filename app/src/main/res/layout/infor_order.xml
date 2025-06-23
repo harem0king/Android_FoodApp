@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red_500"
+        android:background="@color/blue"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="16dp">
@@ -19,9 +19,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="Back"
             android:src="@drawable/back"
-            app:tint="@android:color/white"
-            android:contentDescription="Back" />
+            app:tint="@android:color/white" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -235,11 +235,11 @@
                 android:id="@+id/btnUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cập nhật"
-                android:backgroundTint="@android:color/holo_red_light"
-                android:textColor="@android:color/white"
                 android:layout_gravity="end"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/blue"
+                android:text="Cập nhật"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
@@ -248,7 +248,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red_500"
+        android:background="@color/blue"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="16dp">
@@ -263,9 +263,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="Home"
                 android:src="@drawable/home"
-                app:tint="@android:color/white"
-                android:contentDescription="Home" />
+                app:tint="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -285,9 +285,9 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="Account"
                 android:src="@drawable/vetor"
-                app:tint="@android:color/white"
-                android:contentDescription="Account" />
+                app:tint="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"

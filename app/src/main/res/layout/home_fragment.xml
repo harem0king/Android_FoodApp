@@ -5,7 +5,7 @@
     android:id="@+id/home_fragment"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:background="#90CAF9"
+    android:background="#57BDD7"
     android:gravity="center_vertical"
     android:orientation="horizontal">
 

@@ -11,15 +11,15 @@
         android:id="@+id/tv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#F44336"
+        android:background="#57BDD7"
+        android:gravity="center"
+        android:padding="16dp"
         android:text="Quản lý nhân viên"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        android:gravity="center"
-        android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Form heading -->
     <TextView
@@ -161,7 +161,7 @@
             android:layout_width="202dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/red_500"
+            android:backgroundTint="@color/blue"
             android:text="Xong" />
 
     </LinearLayout>
